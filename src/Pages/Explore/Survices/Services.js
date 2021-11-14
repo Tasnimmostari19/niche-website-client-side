@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 
 const Services = (props) => {
-    const { name, description, img, price } = props.service;
+    const { name, description, img, price, _id } = props.service;
     return (
         <Grid item xs={4} sm={4} md={4}>
             <Card sx={{ border: 0, boxShadow: 0 }}>
@@ -29,7 +29,7 @@ const Services = (props) => {
                         Price: {price}
                     </Typography>
                 </CardContent>
-                <NavLink to="/purchase"> <Button size="small">Buy Now</Button></NavLink>
+                <NavLink to={`/purchase/${_id}`}> <Button size="small">Buy Now</Button></NavLink>
             </Card>
         </Grid>
     );

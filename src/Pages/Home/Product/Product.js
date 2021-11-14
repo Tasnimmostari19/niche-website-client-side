@@ -9,9 +9,10 @@ import { NavLink } from 'react-router-dom';
 
 
 
+
 const Product = (props) => {
-    const { name, description, img, price } = props.product
-    // console.log(props);
+    const { name, description, img, price, _id } = props.product
+
     return (
 
         <Grid item xs={4} sm={4} md={4}>
@@ -33,7 +34,7 @@ const Product = (props) => {
                         Price: {price}
                     </Typography>
                 </CardContent>
-                <NavLink to="/purchase"> <Button size="small">Buy Now</Button></NavLink>
+                <NavLink to={`/purchase/${_id}`}> <Button size="small">Buy Now</Button></NavLink>
             </Card>
         </Grid>
 
