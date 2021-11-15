@@ -27,7 +27,12 @@ import {
     useParams,
     useRouteMatch
 } from "react-router-dom";
-import Button from '@restart/ui/esm/Button';
+import Button from '@mui/material/Button';
+import DashboardHome from '../DashboardHome/DashboardHome';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import ManageProduct from '../ManageProduct/ManageProduct';
+import AddAProduct from '../AddAProduct/AddAProduct';
 
 
 
@@ -50,9 +55,11 @@ const Dashboard = (props) => {
             <Toolbar />
             <Divider />
 
-            <Link to={`${url}`}><Button color='black'>Dashboard</Button></Link>
-            <Link to={`${url}/manageAllProduct`}><Button color='black'>Manage All Product</Button></Link>
-            <Link to={`${url}/addAProduct`}><Button color='black'>Add A Product</Button></Link>
+            <Link to={`${url}`}><Button variant="contained">Dashboard</Button></Link>
+            <Link to={`${url}/manageAllOrder`}><Button variant="contained">Manage All Order</Button></Link>
+            <Link to={`${url}/addAProduct`}><Button variant="contained">Add A Product</Button></Link>
+            <Link to={`${url}/makeAdmin`}><Button variant="contained">Make Admin</Button></Link>
+            <Link to={`${url}/manageProduct`}><Button variant="contained">Manage Product</Button></Link>
             <List>
                 {['Pay', 'MyOrder', 'Review', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
@@ -133,9 +140,34 @@ const Dashboard = (props) => {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Typography paragraph>
+
+
+                <Switch>
+                    <Route exact path={path}>
+                        <DashboardHome></DashboardHome>
+                    </Route>
+                    <Route path={`${path}/makeAdmin`}>
+                        <MakeAdmin></MakeAdmin>
+
+                    </Route>
+                    <Route path={`${path}/manageAllOrder`}>
+                        <ManageAllOrders></ManageAllOrders>
+
+                    </Route>
+                    <Route path={`${path}/addAProduct`}>
+                        <AddAProduct></AddAProduct>
+
+                    </Route>
+                    <Route path={`${path}/manageProduct`}>
+                        <ManageProduct></ManageProduct>
+
+                    </Route>
+                </Switch>
+
+
+                {/* <Typography paragraph>
                     <WriteReview></WriteReview>
-                </Typography>
+                </Typography> */}
 
             </Box>
         </Box>
