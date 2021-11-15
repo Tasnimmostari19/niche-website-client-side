@@ -1,21 +1,16 @@
+import { Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import Button from '@restart/ui/esm/Button';
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 
-
-const MProduct = (props) => {
-    const { name, description, img, price, _id } = props.product
+const MyOrder = (props) => {
+    const { name, booking, pname, email, _id } = props.order;
 
 
 
     const handleDeleteProduct = id => {
-        const proceed = window.confirm('Delete sure?')
+        const proceed = window.confirm('You really want to delete this order?')
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `http://localhost:5000/purchase/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -35,21 +30,20 @@ const MProduct = (props) => {
     return (
         <Grid item xs={4} sm={4} md={4}>
             <Card sx={{ border: 0, boxShadow: 0 }}>
-                <CardMedia
-                    component="img"
-                    style={{ width: 'auto', height: '200px', margin: '0 auto' }}
-                    image={img}
-                    alt=""
-                />
+
                 <CardContent>
                     <Typography variant="h5" component="div">
-                        {name}
+                        User Name:{name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {description}
+                        User email:{email}
+                    </Typography>
+
+                    <Typography variant="h6" component="div">
+                        Product Name:{pname}
                     </Typography>
                     <Typography variant="h6" component="div">
-                        Price: {price}
+                        Product Id:{booking}
                     </Typography>
                 </CardContent>
                 <Button onClick={() => handleDeleteProduct(_id)} className='book-btn'>Delete</Button>
@@ -58,4 +52,4 @@ const MProduct = (props) => {
     );
 };
 
-export default MProduct;
+export default MyOrder;

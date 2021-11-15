@@ -52,11 +52,9 @@ const ManageAllOrders = () => {
                                     <Card.Text>
                                         Booking Id: {order.booking}
                                     </Card.Text>
+
                                     <Card.Text>
-                                        Trip date: {order.date}
-                                    </Card.Text>
-                                    <Card.Text>
-                                        Trip date: {order.pname}
+                                        Product Name: {order.pname}
                                     </Card.Text>
                                     <Card.Text>
                                         Phone no: {order.phone}
