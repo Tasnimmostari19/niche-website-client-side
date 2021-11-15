@@ -43,7 +43,7 @@ function App() {
             </Route>
           </Switch>
 
-          <Footer></Footer>
+
         </BrowserRouter>
       </AuthProvider>
     </div>
