@@ -33,20 +33,20 @@ const AddAProduct = () => {
     return (
         <div>
             <h2>add a product</h2>
-            <form className='order-form add-trip-form' onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 {/* defaultValue={user.name} */}
-                <input placeholder="Name" {...register("name")} />
+                <input style={{ width: '50%', margin: '10px' }} placeholder="Name" {...register("name")} />
                 <br />
-                <input placeholder="Status" {...register("status")} />
+                <input style={{ width: '50%', margin: '10px' }} placeholder="Status" {...register("status")} />
                 <br />
-                <input placeholder="Price" {...register("price")} />
+                <input style={{ width: '50%', margin: '10px' }} placeholder="Price" {...register("price")} />
                 <br />
-                <input placeholder="Description" {...register("description")} />
+                <input style={{ width: '50%', margin: '10px' }} placeholder="Description" {...register("description")} />
                 <br />
-                <input placeholder="Img Url" {...register("img")} />
+                <input style={{ width: '50%', margin: '10px' }} placeholder="Img Url" {...register("img")} />
                 <br />
 
-                <input className='form-submit' type="submit" />
+                <input style={{ width: '50%', margin: '10px' }} className='form-submit' type="submit" />
             </form>
         </div>
     );

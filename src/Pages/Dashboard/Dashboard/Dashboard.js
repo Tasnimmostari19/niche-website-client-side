@@ -20,11 +20,10 @@ import WriteReview from '../WriteReview/WriteReview';
 
 
 import {
-    BrowserRouter as Router,
+
     Switch,
     Route,
     Link,
-    useParams,
     useRouteMatch
 } from "react-router-dom";
 import Button from '@mui/material/Button';
@@ -35,6 +34,7 @@ import ManageProduct from '../ManageProduct/ManageProduct';
 import AddAProduct from '../AddAProduct/AddAProduct';
 import MyOrders from '../MyOrders/MyOrders';
 import Pay from '../Pay/Pay';
+import useAuth from '../../../hooks/useAuth';
 
 
 
@@ -46,6 +46,8 @@ const Dashboard = (props) => {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
+    const { logOut, admin } = useAuth();
+
     let { path, url } = useRouteMatch();
 
     const handleDrawerToggle = () => {
@@ -56,15 +58,24 @@ const Dashboard = (props) => {
         <div>
             <Toolbar />
             <Divider />
+            <Link to={`${url}`}><Button style={{ margin: '5px' }} variant="contained">Dashboard</Button></Link>
+            {admin &&
+                <Box>
 
-            <Link to={`${url}`}><Button variant="contained">Dashboard</Button></Link>
-            <Link to={`${url}/manageAllOrder`}><Button variant="contained">Manage All Order</Button></Link>
-            <Link to={`${url}/addAProduct`}><Button variant="contained">Add A Product</Button></Link>
-            <Link to={`${url}/makeAdmin`}><Button variant="contained">Make Admin</Button></Link>
-            <Link to={`${url}/manageProduct`}><Button variant="contained">Manage Product</Button></Link>
-            <Link to={`${url}/pay`}><Button variant="contained">Pay</Button></Link><br />
-            <Link to={`${url}/myOrders`}><Button variant="contained">My Orders</Button></Link><br />
-            <Link to={`${url}/review`}><Button variant="contained">Review</Button></Link>
+                    <Link to={`${url}/manageAllOrder`}><Button style={{ margin: '5px' }} variant="contained">Manage All Order</Button></Link><br />
+                    <Link to={`${url}/addAProduct`}><Button style={{ margin: '5px' }} variant="contained">Add A Product</Button></Link><br />
+                    <Link to={`${url}/makeAdmin`}><Button style={{ margin: '5px' }} variant="contained">Make Admin</Button></Link><br />
+                    <Link to={`${url}/manageProduct`}><Button style={{ margin: '5px' }} variant="contained">Manage Product</Button></Link><br />
+                </Box>
+            }
+            {!admin &&
+                <Box>
+                    <Link to={`${url}/pay`}><Button style={{ margin: '5px' }} variant="contained">Pay</Button></Link><br />
+                    <Link to={`${url}/myOrders`}><Button style={{ margin: '5px' }} variant="contained">My Orders</Button></Link><br />
+                    <Link to={`${url}/review`}><Button style={{ margin: '5px' }} variant="contained">Review</Button></Link><br />
+                </Box>
+            }
+            <Button style={{ margin: '5px' }} onClick={logOut} color="inherit">Logout</Button>
             <List>
 
             </List>

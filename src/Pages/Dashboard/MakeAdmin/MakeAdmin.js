@@ -37,6 +37,7 @@ const MakeAdmin = () => {
             <h2>Make Admin</h2>
             <form onSubmit={handleAdminSubmit} action="">
                 <TextField
+                    sx={{ width: "70%" }}
                     label="Standard"
                     variant="standard"
                     onBlur={handleOnBlur}
