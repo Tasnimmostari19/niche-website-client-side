@@ -33,6 +33,8 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import AddAProduct from '../AddAProduct/AddAProduct';
+import MyOrders from '../MyOrders/MyOrders';
+import Pay from '../Pay/Pay';
 
 
 
@@ -60,15 +62,11 @@ const Dashboard = (props) => {
             <Link to={`${url}/addAProduct`}><Button variant="contained">Add A Product</Button></Link>
             <Link to={`${url}/makeAdmin`}><Button variant="contained">Make Admin</Button></Link>
             <Link to={`${url}/manageProduct`}><Button variant="contained">Manage Product</Button></Link>
+            <Link to={`${url}/pay`}><Button variant="contained">Pay</Button></Link><br />
+            <Link to={`${url}/myOrders`}><Button variant="contained">My Orders</Button></Link><br />
+            <Link to={`${url}/review`}><Button variant="contained">Review</Button></Link>
             <List>
-                {['Pay', 'MyOrder', 'Review', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        {/* <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon> */}
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+
             </List>
 
         </div>
@@ -162,12 +160,23 @@ const Dashboard = (props) => {
                         <ManageProduct></ManageProduct>
 
                     </Route>
+                    <Route path={`${path}/pay`}>
+                        <Pay></Pay>
+
+                    </Route>
+                    <Route path={`${path}/myOrders`}>
+                        <MyOrders></MyOrders>
+
+                    </Route>
+
+                    <Route path={`${path}/review`}>
+                        <WriteReview></WriteReview>
+
+                    </Route>
                 </Switch>
 
 
-                {/* <Typography paragraph>
-                    <WriteReview></WriteReview>
-                </Typography> */}
+
 
             </Box>
         </Box>

@@ -64,7 +64,7 @@ const Purchase = () => {
                     <input defaultValue={user.displayName} {...register("name", { required: true })} /><br />
 
                     <input defaultValue={user.email} {...register("email", { required: true })} /><br />
-                    <input placeholder="dd/mm/yyyy" {...register("date")} /><br />
+                    <input placeholder="address" {...register("address")} /><br />
                     <input placeholder="Phone Number" type="number" {...register("phone")} /><br />
                     <input className='form-submit' type="submit" />
                 </form>
