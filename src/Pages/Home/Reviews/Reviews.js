@@ -1,4 +1,6 @@
+import { Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 import Review from '../Review/Review';
 
 const Reviews = () => {
@@ -11,15 +13,20 @@ const Reviews = () => {
     }, [])
     return (
         <div style={{ marginTop: '50px', marginBottom: '50px' }}>
-            <h2>Reviews</h2>
+            <Container>
+                <h2>Reviews</h2>
 
-            {
-                reviews.map(review => <Review
 
-                    key={review._id}
-                    review={review}
-                ></Review>)
-            }
+                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {
+                        reviews.map(review => <Review
+
+                            key={review._id}
+                            review={review}
+                        ></Review>)
+                    }
+                </Grid>
+            </Container>
 
         </div>
     );

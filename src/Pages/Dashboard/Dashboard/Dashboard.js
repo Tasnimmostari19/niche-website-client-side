@@ -17,6 +17,20 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import WriteReview from '../WriteReview/WriteReview';
 
+
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+} from "react-router-dom";
+import Button from '@restart/ui/esm/Button';
+
+
+
 const drawerWidth = 250;
 
 const Dashboard = (props) => {
@@ -24,6 +38,8 @@ const Dashboard = (props) => {
 
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    let { path, url } = useRouteMatch();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -33,6 +49,10 @@ const Dashboard = (props) => {
         <div>
             <Toolbar />
             <Divider />
+
+            <Link to={`${url}`}><Button color='black'>Dashboard</Button></Link>
+            <Link to={`${url}/manageAllProduct`}><Button color='black'>Manage All Product</Button></Link>
+            <Link to={`${url}/addAProduct`}><Button color='black'>Add A Product</Button></Link>
             <List>
                 {['Pay', 'MyOrder', 'Review', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
