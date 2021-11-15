@@ -10,7 +10,7 @@ const MyOrder = (props) => {
     const handleDeleteProduct = id => {
         const proceed = window.confirm('You really want to delete this order?')
         if (proceed) {
-            const url = `http://localhost:5000/purchase/${id}`;
+            const url = `https://murmuring-basin-44738.herokuapp.com/purchase/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

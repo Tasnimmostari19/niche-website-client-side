@@ -14,7 +14,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email }
-        fetch('http://localhost:5000/user', {
+        fetch('https://murmuring-basin-44738.herokuapp.com/user', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ const MakeAdmin = () => {
             <form onSubmit={handleAdminSubmit} action="">
                 <TextField
                     sx={{ width: "70%" }}
-                    label="Standard"
+                    label="Email"
                     variant="standard"
                     onBlur={handleOnBlur}
                     type="email"

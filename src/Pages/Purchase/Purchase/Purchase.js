@@ -12,7 +12,7 @@ const Purchase = () => {
     console.log(pid);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${pid}`)
+        fetch(`https://murmuring-basin-44738.herokuapp.com/product/${pid}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -27,7 +27,7 @@ const Purchase = () => {
 
 
 
-        fetch(`http://localhost:5000/purchase`, {
+        fetch(`https://murmuring-basin-44738.herokuapp.com/purchase`, {
 
             method: 'POST',
             headers: {

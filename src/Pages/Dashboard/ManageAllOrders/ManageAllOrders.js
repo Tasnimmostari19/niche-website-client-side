@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/purchase')
+        fetch('https://murmuring-basin-44738.herokuapp.com/purchase')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
 
 
     const handlePending = id => {
-        const url = `http://localhost:5000/purchase/${id}`;
+        const url = `https://murmuring-basin-44738.herokuapp.com/purchase/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

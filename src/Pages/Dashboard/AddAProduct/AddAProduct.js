@@ -9,7 +9,7 @@ const AddAProduct = () => {
 
         console.log(data);
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://murmuring-basin-44738.herokuapp.com/product', {
 
             method: 'POST',
             headers: {

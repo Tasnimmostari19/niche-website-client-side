@@ -20,7 +20,7 @@ const WriteReview = () => {
 
     const handleSubmit = e => {
 
-        fetch(`http://localhost:5000/review`, {
+        fetch(`https://murmuring-basin-44738.herokuapp.com/review`, {
 
             method: 'POST',
             headers: {
