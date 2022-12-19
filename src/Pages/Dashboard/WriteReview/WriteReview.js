@@ -20,7 +20,7 @@ const WriteReview = () => {
 
     const handleSubmit = e => {
 
-        fetch(`https://murmuring-basin-44738.herokuapp.com/review`, {
+        fetch(`https://niche-website-server-side-production.up.railway.app/review`, {
 
             method: 'POST',
             headers: {

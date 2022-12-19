@@ -7,7 +7,7 @@ import { Container } from '@mui/material';
 const Products = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://murmuring-basin-44738.herokuapp.com/product')
+        fetch('https://niche-website-server-side-production.up.railway.app/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

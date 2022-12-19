@@ -12,7 +12,7 @@ const Purchase = () => {
     console.log(pid);
 
     useEffect(() => {
-        fetch(`https://murmuring-basin-44738.herokuapp.com/product/${pid}`)
+        fetch(`https://niche-website-server-side-production.up.railway.app/product/${pid}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -27,7 +27,7 @@ const Purchase = () => {
 
 
 
-        fetch(`https://murmuring-basin-44738.herokuapp.com/purchase`, {
+        fetch(`https://niche-website-server-side-production.up.railway.app/purchase`, {
 
             method: 'POST',
             headers: {

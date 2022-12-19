@@ -84,7 +84,7 @@ const useFirebase = () => {
 
     useEffect(() => {
 
-        fetch(`https://murmuring-basin-44738.herokuapp.com/user/${user.email}`)
+        fetch(`https://niche-website-server-side-production.up.railway.app/user/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
 
@@ -106,7 +106,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('https://murmuring-basin-44738.herokuapp.com/user', {
+        fetch('https://niche-website-server-side-production.up.railway.app/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

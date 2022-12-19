@@ -9,7 +9,7 @@ const AddAProduct = () => {
 
         console.log(data);
 
-        fetch('https://murmuring-basin-44738.herokuapp.com/product', {
+        fetch('https://niche-website-server-side-production.up.railway.app/product', {
 
             method: 'POST',
             headers: {

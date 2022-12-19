@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch('https://murmuring-basin-44738.herokuapp.com/purchase')
+        fetch('https://niche-website-server-side-production.up.railway.app/purchase')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
 
 
     const handlePending = id => {
-        const url = `https://murmuring-basin-44738.herokuapp.com/purchase/${id}`;
+        const url = `https://niche-website-server-side-production.up.railway.app/purchase/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

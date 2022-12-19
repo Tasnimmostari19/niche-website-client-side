@@ -14,7 +14,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email }
-        fetch('https://murmuring-basin-44738.herokuapp.com/user', {
+        fetch('https://niche-website-server-side-production.up.railway.app/user', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

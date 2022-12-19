@@ -15,7 +15,7 @@ const MProduct = (props) => {
     const handleDeleteProduct = id => {
         const proceed = window.confirm('Delete sure?')
         if (proceed) {
-            const url = `https://murmuring-basin-44738.herokuapp.com/product/${id}`;
+            const url = `https://niche-website-server-side-production.up.railway.app/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

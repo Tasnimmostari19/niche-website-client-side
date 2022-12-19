@@ -9,7 +9,7 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`https://murmuring-basin-44738.herokuapp.com/purchase/myOrder?email=${user.email}`)
+        fetch(`https://niche-website-server-side-production.up.railway.app/purchase/myOrder?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
