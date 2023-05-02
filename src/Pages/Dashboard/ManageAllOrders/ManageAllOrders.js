@@ -7,7 +7,7 @@ const ManageAllOrders = () => {
 
 
     useEffect(() => {
-        fetch('https://niche-website-server-side-production.up.railway.app/purchase')
+        fetch('https://niche-website-server-side-wwab.vercel.app/purchase')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
 
 
     const handlePending = id => {
-        const url = `https://niche-website-server-side-production.up.railway.app/purchase/${id}`;
+        const url = `https://niche-website-server-side-wwab.vercel.app/purchase/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

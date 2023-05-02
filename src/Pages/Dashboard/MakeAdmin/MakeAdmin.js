@@ -14,7 +14,7 @@ const MakeAdmin = () => {
 
     const handleAdminSubmit = e => {
         const user = { email }
-        fetch('https://niche-website-server-side-production.up.railway.app/user', {
+        fetch('https://niche-website-server-side-wwab.vercel.app/user', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

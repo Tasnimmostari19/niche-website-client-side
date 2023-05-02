@@ -8,7 +8,7 @@ const Explore = () => {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://niche-website-server-side-production.up.railway.app/product')
+        fetch('https://niche-website-server-side-wwab.vercel.app/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

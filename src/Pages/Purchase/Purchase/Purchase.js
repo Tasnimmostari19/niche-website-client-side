@@ -12,7 +12,7 @@ const Purchase = () => {
     console.log(pid);
 
     useEffect(() => {
-        fetch(`https://niche-website-server-side-production.up.railway.app/product/${pid}`)
+        fetch(`https://niche-website-server-side-wwab.vercel.app/product/${pid}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])
@@ -27,7 +27,7 @@ const Purchase = () => {
 
 
 
-        fetch(`https://niche-website-server-side-production.up.railway.app/purchase`, {
+        fetch(`https://niche-website-server-side-wwab.vercel.app/purchase`, {
 
             method: 'POST',
             headers: {

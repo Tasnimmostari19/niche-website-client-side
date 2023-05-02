@@ -15,7 +15,7 @@ const MProduct = (props) => {
     const handleDeleteProduct = id => {
         const proceed = window.confirm('Delete sure?')
         if (proceed) {
-            const url = `https://niche-website-server-side-production.up.railway.app/product/${id}`;
+            const url = `https://niche-website-server-side-wwab.vercel.app/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

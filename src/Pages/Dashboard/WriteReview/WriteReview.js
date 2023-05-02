@@ -20,7 +20,7 @@ const WriteReview = () => {
 
     const handleSubmit = e => {
 
-        fetch(`https://niche-website-server-side-production.up.railway.app/review`, {
+        fetch(`https://niche-website-server-side-wwab.vercel.app/review`, {
 
             method: 'POST',
             headers: {

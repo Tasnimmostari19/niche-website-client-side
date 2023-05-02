@@ -9,7 +9,7 @@ const AddAProduct = () => {
 
         console.log(data);
 
-        fetch('https://niche-website-server-side-production.up.railway.app/product', {
+        fetch('https://niche-website-server-side-wwab.vercel.app/product', {
 
             method: 'POST',
             headers: {

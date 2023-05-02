@@ -10,7 +10,7 @@ const MyOrder = (props) => {
     const handleDeleteProduct = id => {
         const proceed = window.confirm('You really want to delete this order?')
         if (proceed) {
-            const url = `https://niche-website-server-side-production.up.railway.app/purchase/${id}`;
+            const url = `https://niche-website-server-side-wwab.vercel.app/purchase/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
